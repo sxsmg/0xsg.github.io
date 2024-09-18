@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} - Your Tech Hub</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+    </script>
+</head>
+<body>
+    <main>
+        <a href="../index.html" class="back-link">&lt; Back to main page</a>
+        <article class="post-content">
+            <h1>{{TITLE}}</h1>
+            <div class="post-meta">Published on: {{DATE}}</div>
+            {{CONTENT}}
+        </article>
+        <footer>
+            <hr>
+            <p><i>Where silicon meets imagination.</i></p>
+        </footer>
+    </main>
+</body>
+</html>
+

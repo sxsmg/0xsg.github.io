@@ -1,3 +1,4 @@
+/* General styles */
 body {
     max-width: 700px;
     margin: 20vh auto;
@@ -22,14 +23,7 @@ hr {
     border: 2.5px dotted black;
 }
 
-p:not(:nth-child(2)) {
-    margin-top: 30px;
-}
-
-p:nth-child(2) {
-    margin-top: 0px;
-}
-
+/* Header styles */
 h2, h3 {
     margin-bottom: 5px;
 }
@@ -39,10 +33,20 @@ h4 {
 }
 
 h5 {
-    margin: 0px;
+    margin: 0;
     font-weight: 100;
 }
 
+/* Paragraph styles */
+p:not(:nth-child(2)) {
+    margin-top: 30px;
+}
+
+p:nth-child(2) {
+    margin-top: 0;
+}
+
+/* Footer styles */
 footer {
     position: fixed;
     bottom: 0;
@@ -53,8 +57,63 @@ footer {
     background-color: white;
 }
 
+/* Blog post specific styles */
+.post-content {
+    margin-bottom: 60px; /* Space for footer */
+}
+
+.post-content h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.post-content h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.post-content p {
+    margin-bottom: 15px;
+}
+
+.post-content ul, .post-content ol {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.post-content li {
+    margin-bottom: 5px;
+}
+
+.post-content pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+.post-content code {
+    font-family: monospace;
+    background-color: #f4f4f4;
+    padding: 2px 4px;
+}
+
+.post-meta {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Responsive design */
 @media only screen and (max-width: 650px) {
     body {
         width: 90vw !important;
+        margin: 10vh auto;
     }
 }
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Gradient Descent in Machine Learning - Your Tech Hub</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+    </script>
+</head>
+<body>
+    <main>
+        <a href="../index.html" class="back-link">&lt; Back to main page</a>
+        <article class="post-content">
+            <h1>Understanding Gradient Descent in Machine Learning</h1>
+            <div class="post-meta">Published on: October 5, 2024</div>
+            <p>Gradient Descent is a fundamental optimization algorithm in machine learning. It's used to minimize the cost function in various ML models.</p>
+<h2>The Basics</h2>
+<p>In gradient descent, we update our parameters $\theta$ in the opposite direction of the gradient of the cost function $J(\theta)$:</p>
+<p>$$ \theta = \theta - \alpha \nabla J(\theta) $$</p>
+<p>Where:
+- $\theta$ represents the model parameters
+- $\alpha$ is the learning rate
+- $\nabla J(\theta)$ is the gradient of the cost function</p>
+<h2>Example: Linear Regression</h2>
+<p>For a simple linear regression model $y = mx + b$, our update rules would be:</p>
+<p>$$ m = m - \alpha \frac{\partial}{\partial m} J(m,b) $$
+$$ b = b - \alpha \frac{\partial}{\partial b} J(m,b) $$</p>
+<p>Where $J(m,b)$ is typically the mean squared error:</p>
+<p>$$ J(m,b) = \frac{1}{2n} \sum_{i=1}^n (y_i - (mx_i + b))^2 $$</p>
+<p>By iteratively applying these update rules, we can find the optimal values for $m$ and $b$ that minimize our cost function.</p>
+        </article>
+        <footer>
+            <hr>
+            <p><i>Where silicon meets imagination.</i></p>
+        </footer>
+    </main>
+</body>
+</html>
+

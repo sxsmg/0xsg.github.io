@@ -9,27 +9,80 @@
 </head>
 <body>
     <main>
-        <h2>SG</h2>
-        <p></p>
-        x.com/<a href="https://x.com/__sxsm">__sxsm</a> <br>
-        <a href="mailto:thesgadyal@protonmail.com">thesgadyal@protonmail.com</a><br>
-        <p>Pushing the boundaries of software and hardware. Former ML engineer, now diving deep into the world of high-performance computing and custom chip design.</p>
-        <h3>Currently:</h3>
-        <ul>
-            <li>Optimizing distributed training algorithms for large-scale ML models.</li>
-            <li>Exploring the intersection of ML compilers and GPU architecture.</li>
-            <li>Designing a custom ASIC for accelerating specific ML workloads.</li>
-            <li>Writing about the future of AI hardware and software co-design.</li>
-        </ul>
-        <br>
-        <h3>Blog Posts:</h3>
-        &gt; <a href="./posts/future-of-ai-chips.html">The Future of AI Chips: Beyond Moore's Law</a><br>
-        &gt; <a href="./posts/distributed-ml-challenges.html">Scaling Mountains: Challenges in Distributed ML</a><br>
-        &gt; <a href="./posts/compiler-optimization-techniques.html">Compiler Magic: Advanced Optimization Techniques for ML</a>
+        <section id="home">
+            <h2>SG</h2>
+            <p></p>
+            <a href="https://x.com/__sxsm">x.com/__sxsm</a><br>
+            <a href="mailto:thesgadyal@protonmail.com">thesgadyal@protonmail.com</a><br>
+            <p>Pushing the boundaries of software and hardware. Former ML engineer, now diving deep into the world of high-performance computing and custom chip design.</p>
+            <h3>Currently:</h3>
+            <ul>
+                <li>Optimizing distributed training algorithms for large-scale ML models.</li>
+                <li>Exploring the intersection of ML compilers and GPU architecture.</li>
+                <li>Designing a custom ASIC for accelerating specific ML workloads.</li>
+                <li>Writing about the future of AI hardware and software co-design.</li>
+            </ul>
+            <br>
+            <h3>Blog:</h3>
+            &gt; <a href="posts/future-of-ai-chips.html">The Future of AI Chips: Beyond Moore's Law</a><br>
+            &gt; <a href="posts/distributed-ml-challenges.html">Scaling Mountains: Challenges in Distributed ML</a><br>
+            &gt; <a href="posts/compiler-optimization-techniques.html">Compiler Magic: Advanced Optimization Techniques for ML</a><br>
+            &gt; <a href="posts/understanding-gradient-descent-in-ml.html">Number Crunch: Understanding Gradient Descent in ML</a>
+        </section>
+
+        <section id="post-content" class="post-content" style="display: none;">
+            <a href="#" id="back-link" class="back-link">&lt; Back to main page</a>
+            <div id="post-container"></div>
+        </section>
+
         <footer>
             <hr>
             <p><i>Where silicon meets imagination.</i></p>
         </footer>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const homeSection = document.getElementById('home');
+            const postSection = document.getElementById('post-content');
+            const postContainer = document.getElementById('post-container');
+            const backLink = document.getElementById('back-link');
+            const postLinks = document.querySelectorAll('a[data-post]');
+
+            function showHome() {
+                homeSection.style.display = 'block';
+                postSection.style.display = 'none';
+            }
+
+            function showPost(postId) {
+                homeSection.style.display = 'none';
+                postSection.style.display = 'block';
+                fetch(`posts/${postId}.html`)
+                    .then(response => response.text())
+                    .then(html => {
+                        postContainer.innerHTML = html;
+                    })
+                    .catch(error => {
+                        console.error('Error loading post:', error);
+                        postContainer.innerHTML = '<p>Error loading post. Please try again.</p>';
+                    });
+            }
+
+            backLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                showHome();
+            });
+
+            postLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const postId = this.getAttribute('data-post');
+                    showPost(postId);
+                });
+            });
+
+            showHome(); // Start with the home page visible
+        });
+    </script>
 </body>
 </html>
