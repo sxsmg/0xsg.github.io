@@ -1,0 +1,60 @@
+body {
+    max-width: 700px;
+    margin: 20vh auto;
+    padding: 0 20px;
+    font-family: monospace;
+    line-height: 1.4em;
+    background-color: white;
+    color: black;
+    user-select: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 2.5px dotted black;
+}
+
+p:not(:nth-child(2)) {
+    margin-top: 30px;
+}
+
+p:nth-child(2) {
+    margin-top: 0px;
+}
+
+h2, h3 {
+    margin-bottom: 5px;
+}
+
+h4 {
+    margin-top: 30px;
+}
+
+h5 {
+    margin: 0px;
+    font-weight: 100;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: white;
+}
+
+@media only screen and (max-width: 650px) {
+    body {
+        width: 90vw !important;
+    }
+}
